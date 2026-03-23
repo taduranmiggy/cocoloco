@@ -1,10 +1,12 @@
 // pages/seller/InventoryPage.js - Manage products (add, edit, delete)
 import React, { useState, useEffect } from 'react';
 import { useProducts } from '../../context/ProductContext';
+import { useToast } from '../../components/Toast';
 import '../../styles/pages/seller.css';
 
 const InventoryPage = () => {
   const { myProducts: products, addProduct, updateProduct, deleteProduct, fetchMyProducts } = useProducts();
+  const { addToast } = useToast();
 
   useEffect(() => {
     fetchMyProducts();
@@ -47,7 +49,7 @@ const InventoryPage = () => {
 
     // Validation
     if (!formData.name || !formData.price || !formData.quantity) {
-      alert('Please fill in all required fields');
+      addToast('Please fill in all required fields', 'warning');
       return;
     }
 

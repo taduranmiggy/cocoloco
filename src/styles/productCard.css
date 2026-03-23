@@ -111,6 +111,41 @@
   color: var(--text-secondary);
 }
 
+/* Rating + Sold row */
+.product-rating-sold {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.card-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.star-filled {
+  color: #FFC107;
+  font-size: 12px;
+}
+
+.star-empty {
+  color: #ddd;
+  font-size: 12px;
+}
+
+.card-sold {
+  color: var(--text-secondary);
+}
+
+.btn-add-cart {
+  width: 100%;
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
 .product-actions {
   display: flex;
   gap: 6px;

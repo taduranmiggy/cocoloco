@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { ProductProvider } from './context/ProductContext';
+import { ToastProvider } from './components/Toast';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -13,6 +14,7 @@ import HomePage from './pages/buyer/HomePage';
 import LoginPage from './pages/buyer/LoginPage';
 import RegisterPage from './pages/buyer/RegisterPage';
 import ProductsPage from './pages/buyer/ProductsPage';
+import ProductDetailPage from './pages/buyer/ProductDetailPage';
 import CartPage from './pages/buyer/CartPage';
 import CheckoutPage from './pages/buyer/CheckoutPage';
 import TransactionHistoryPage from './pages/buyer/TransactionHistoryPage';
@@ -31,6 +33,7 @@ function App() {
       <CartProvider>
         <ProductProvider>
           <Router>
+            <ToastProvider>
             <div className="app">
               <Navbar />
               
@@ -41,6 +44,7 @@ function App() {
                   <Route path="/login" element={<LoginPage />} />
                   <Route path="/register" element={<RegisterPage />} />
                   <Route path="/products" element={<ProductsPage />} />
+                  <Route path="/products/:id" element={<ProductDetailPage />} />
 
                   {/* Legacy routes redirect to new paths */}
                   <Route path="/buyer/login" element={<Navigate to="/login" replace />} />
@@ -114,6 +118,7 @@ function App() {
 
               <Footer />
             </div>
+            </ToastProvider>
           </Router>
         </ProductProvider>
       </CartProvider>

@@ -3,6 +3,40 @@ import React, { useState, useEffect } from 'react';
 import { orderAPI } from '../../services/api';
 import '../../styles/pages/transactions.css';
 
+const ORDER_STEPS = ['Pending', 'Processing', 'Shipped', 'Delivered'];
+
+const OrderTimeline = ({ status }) => {
+  const currentIdx = ORDER_STEPS.indexOf(status);
+  const isCancelled = status === 'Cancelled';
+
+  if (isCancelled) {
+    return (
+      <div className="order-timeline">
+        <div className="timeline-step cancelled">
+          <div className="step-dot">✕</div>
+          <span className="step-label">Cancelled</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="order-timeline">
+      {ORDER_STEPS.map((step, idx) => (
+        <React.Fragment key={step}>
+          <div className={`timeline-step ${idx <= currentIdx ? 'completed' : ''} ${idx === currentIdx ? 'current' : ''}`}>
+            <div className="step-dot">{idx < currentIdx ? '✓' : idx + 1}</div>
+            <span className="step-label">{step}</span>
+          </div>
+          {idx < ORDER_STEPS.length - 1 && (
+            <div className={`timeline-line ${idx < currentIdx ? 'completed' : ''}`} />
+          )}
+        </React.Fragment>
+      ))}
+    </div>
+  );
+};
+
 const TransactionHistoryPage = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -83,6 +117,7 @@ const TransactionHistoryPage = () => {
               </div>
 
               <div className="transaction-details">
+                <OrderTimeline status={order.status} />
                 <div className="detail-row">
                   <span>Payment Method:</span>
                   <span>{order.paymentMethod === 'cash' ? 'Cash on Delivery' : 'Online Payment'}</span>
