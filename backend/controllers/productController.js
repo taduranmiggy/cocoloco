@@ -24,6 +24,16 @@ exports.getProducts = async (req, res) => {
   }
 };
 
+// GET /api/products/mine - List only the logged-in seller's products
+exports.getMyProducts = async (req, res) => {
+  try {
+    const products = await Product.find({ seller: req.user._id }).sort({ createdAt: -1 });
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 // GET /api/products/:id - Single product
 exports.getProduct = async (req, res) => {
   try {

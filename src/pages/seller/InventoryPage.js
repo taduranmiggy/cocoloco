@@ -1,10 +1,14 @@
 // pages/seller/InventoryPage.js - Manage products (add, edit, delete)
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useProducts } from '../../context/ProductContext';
 import '../../styles/pages/seller.css';
 
 const InventoryPage = () => {
-  const { products, addProduct, updateProduct, deleteProduct } = useProducts();
+  const { myProducts: products, addProduct, updateProduct, deleteProduct, fetchMyProducts } = useProducts();
+
+  useEffect(() => {
+    fetchMyProducts();
+  }, [fetchMyProducts]);
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const [saveMessage, setSaveMessage] = useState('');

@@ -1,11 +1,15 @@
 // pages/seller/StorefrontManagementPage.js - Manage featured products
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useProducts } from '../../context/ProductContext';
 import '../../styles/pages/seller.css';
 
 const StorefrontManagementPage = () => {
-  const { products, updateProduct } = useProducts();
+  const { myProducts: products, updateProduct, fetchMyProducts } = useProducts();
   const [saveMessage, setSaveMessage] = useState('');
+
+  useEffect(() => {
+    fetchMyProducts();
+  }, [fetchMyProducts]);
 
   const toggleFeatured = async (productId) => {
     const product = products.find((p) => p.id === productId);

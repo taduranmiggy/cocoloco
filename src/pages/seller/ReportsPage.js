@@ -6,10 +6,14 @@ import '../../styles/pages/seller.css';
 
 const ReportsPage = () => {
   const [dateRange, setDateRange] = useState('monthly');
-  const { products } = useProducts();
+  const { myProducts: products, fetchMyProducts } = useProducts();
   const [salesData, setSalesData] = useState(null);
   const [inventoryStats, setInventoryStats] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchMyProducts();
+  }, [fetchMyProducts]);
 
   useEffect(() => {
     const fetchReports = async () => {

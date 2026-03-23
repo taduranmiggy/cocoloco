@@ -45,6 +45,8 @@ export const productAPI = {
     return request(`/products${query ? `?${query}` : ''}`);
   },
 
+  getMine: () => request('/products/mine'),
+
   getById: (id) => request(`/products/${id}`),
 
   create: (data) =>

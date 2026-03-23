@@ -10,6 +10,7 @@ const normalizeAll = (arr) => arr.map(normalize);
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [myProducts, setMyProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -31,6 +32,19 @@ export const ProductProvider = ({ children }) => {
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
+
+  // Fetch only the logged-in seller's products
+  const fetchMyProducts = useCallback(async () => {
+    try {
+      const data = await productAPI.getMine();
+      const normalized = normalizeAll(data);
+      setMyProducts(normalized);
+      return normalized;
+    } catch (err) {
+      console.error('Failed to fetch my products:', err.message);
+      return [];
+    }
+  }, []);
 
   // Get all products
   const getAllProducts = useCallback(() => products, [products]);
@@ -68,6 +82,7 @@ export const ProductProvider = ({ children }) => {
     const created = await productAPI.create(productData);
     const normalized = normalize(created);
     setProducts((prev) => [...prev, normalized]);
+    setMyProducts((prev) => [...prev, normalized]);
     return normalized;
   }, []);
 
@@ -78,12 +93,16 @@ export const ProductProvider = ({ children }) => {
     setProducts((prev) =>
       prev.map((p) => (p.id === productId || p._id === productId ? normalized : p))
     );
+    setMyProducts((prev) =>
+      prev.map((p) => (p.id === productId || p._id === productId ? normalized : p))
+    );
   }, []);
 
   // Delete product (seller) — calls backend
   const deleteProduct = useCallback(async (productId) => {
     await productAPI.delete(productId);
     setProducts((prev) => prev.filter((p) => p.id !== productId && p._id !== productId));
+    setMyProducts((prev) => prev.filter((p) => p.id !== productId && p._id !== productId));
   }, []);
 
   // Get product by ID
@@ -100,6 +119,7 @@ export const ProductProvider = ({ children }) => {
 
   const value = {
     products,
+    myProducts,
     filteredProducts,
     loading,
     getAllProducts,
@@ -112,6 +132,7 @@ export const ProductProvider = ({ children }) => {
     getProductById,
     reduceStock,
     fetchProducts,
+    fetchMyProducts,
   };
 
   return (

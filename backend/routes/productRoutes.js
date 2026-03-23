@@ -3,6 +3,7 @@ const auth = require('../middleware/auth');
 const roleGuard = require('../middleware/roleGuard');
 const {
   getProducts,
+  getMyProducts,
   getProduct,
   createProduct,
   updateProduct,
@@ -11,6 +12,10 @@ const {
 
 // Public routes
 router.get('/', getProducts);
+
+// Seller-only: get own products (must be before /:id)
+router.get('/mine', auth, roleGuard('seller'), getMyProducts);
+
 router.get('/:id', getProduct);
 
 // Seller-only routes
