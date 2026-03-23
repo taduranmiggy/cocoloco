@@ -17,8 +17,8 @@
 .transaction-tabs {
   display: flex;
   background: #FFFFFF;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px 2px 0 0;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px 12px 0 0;
   margin-bottom: 0;
   overflow-x: auto;
 }
@@ -53,17 +53,17 @@
 
 .transaction-card {
   background: #FFFFFF;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e8e8e8;
   border-top: none;
   padding: 16px 20px;
   transition: background 0.2s;
 }
 
 .transaction-card:first-child {
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #e8e8e8;
 }
 
-.transaction-card:last-child { border-radius: 0 0 2px 2px; }
+.transaction-card:last-child { border-radius: 0 0 12px 12px; }
 
 .transaction-card:hover { background: #f0f7f0; }
 
@@ -82,8 +82,8 @@
 .transaction-status {
   font-size: 12px;
   font-weight: 500;
-  padding: 4px 10px;
-  border-radius: 2px;
+  padding: 4px 12px;
+  border-radius: 20px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -126,7 +126,7 @@
 .transaction-item-image {
   width: 64px;
   height: 64px;
-  border-radius: 2px;
+  border-radius: 8px;
   object-fit: cover;
   border: 1px solid #f0f0f0;
 }
@@ -175,8 +175,8 @@
   text-align: center;
   padding: 60px 20px;
   background: #FFFFFF;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
 }
 
 .empty-transactions p { font-size: 14px; color: var(--text-secondary); }
@@ -190,7 +190,7 @@
 .transaction-actions .btn {
   font-size: 12px;
   padding: 6px 14px;
-  border-radius: 2px;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {

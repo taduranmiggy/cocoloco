@@ -27,9 +27,9 @@
 
 .checkout-section {
   background: #FFFFFF;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
-  padding: 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 24px;
   margin-bottom: 12px;
 }
 
@@ -58,13 +58,13 @@
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
+  padding: 12px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
   font-size: 14px;
   color: var(--text-color);
-  background: #FFFFFF;
-  transition: border-color 0.2s;
+  background: #FAFAFA;
+  transition: border-color 0.2s, box-shadow 0.2s;
   box-sizing: border-box;
 }
 
@@ -73,6 +73,8 @@
 .form-group textarea:focus {
   border-color: #2E7D32;
   outline: none;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.08);
+  background: #FFFFFF;
 }
 
 .form-row {
@@ -90,9 +92,9 @@
 .delivery-option {
   display: flex;
   align-items: center;
-  padding: 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
+  padding: 14px;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
 }
@@ -123,9 +125,9 @@
 .payment-method {
   display: flex;
   align-items: center;
-  padding: 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
+  padding: 14px;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
 }
@@ -144,12 +146,13 @@
 .checkout-summary {
   width: 300px;
   background: #FFFFFF;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
-  padding: 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  padding: 24px;
   flex-shrink: 0;
   position: sticky;
   top: 80px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .checkout-summary h3 {
@@ -203,20 +206,23 @@
 
 .place-order-btn {
   width: 100%;
-  padding: 12px;
-  background: #2E7D32;
+  padding: 14px;
+  background: linear-gradient(135deg, #2E7D32, #43A047);
   color: #FFFFFF;
   border: none;
-  border-radius: 2px;
-  font-size: 14px;
-  font-weight: 500;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
   margin-top: 16px;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
 }
 
-.place-order-btn:hover { background: #1B5E20; }
+.place-order-btn:hover {
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.3);
+}
 
 .place-order-btn:disabled {
   background: #ccc;
@@ -227,8 +233,8 @@
   text-align: center;
   padding: 60px 20px;
   background: #FFFFFF;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
 }
 
 .order-confirmation h2 { color: #2E7D32; font-size: 24px; margin-bottom: 12px; }

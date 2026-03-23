@@ -3,10 +3,11 @@
 .category-sidebar {
   width: 200px;
   background: #FFFFFF;
-  border-radius: 2px;
+  border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .sidebar-header {
@@ -80,8 +81,8 @@
   font-size: 12px;
   color: var(--text-secondary);
   text-decoration: none;
-  padding: 6px 8px;
-  border-radius: 2px;
+  padding: 6px 10px;
+  border-radius: 6px;
   transition: all 0.15s;
 }
 

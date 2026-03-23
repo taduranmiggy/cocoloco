@@ -82,7 +82,7 @@
   color: var(--text-secondary);
   background: none;
   border: none;
-  border-radius: 2px;
+  border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
   transition: background 0.15s, color 0.15s;
@@ -126,9 +126,10 @@
 /* ===== Profile Card ===== */
 .profile-card {
   background: #FFFFFF;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
-  padding: 28px 32px;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .profile-card h2 {
@@ -216,20 +217,21 @@
 }
 
 .profile-info > .btn-primary {
-  background: #2E7D32;
+  background: linear-gradient(135deg, #2E7D32, #43A047);
   color: #fff;
   border: none;
   padding: 10px 32px;
   font-size: 14px;
   font-weight: 500;
-  border-radius: 2px;
+  border-radius: 10px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
 }
 
 .profile-info > .btn-primary:hover {
-  background: #1B5E20;
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.25);
 }
 
 /* ===== Profile Form (edit mode) ===== */
@@ -258,15 +260,16 @@
 .profile-form .form-group textarea,
 .profile-form .form-group select {
   flex: 1;
-  padding: 10px 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
+  padding: 10px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
   font-size: 14px;
   font-family: inherit;
   box-sizing: border-box;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
   color: var(--text-color);
   resize: vertical;
+  background: #FAFAFA;
 }
 
 .profile-form .form-group input:focus,
@@ -274,7 +277,8 @@
 .profile-form .form-group select:focus {
   border-color: #2E7D32;
   outline: none;
-  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.06);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.08);
+  background: #FFFFFF;
 }
 
 .form-actions {
@@ -288,18 +292,21 @@
   padding: 10px 32px;
   font-size: 14px;
   font-weight: 500;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 .form-actions .btn-primary {
-  background: #2E7D32;
+  background: linear-gradient(135deg, #2E7D32, #43A047);
   color: #FFFFFF;
   border: none;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.form-actions .btn-primary:hover { background: #1B5E20; }
+.form-actions .btn-primary:hover {
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.25);
+}
 
 .form-actions .btn-secondary {
   background: #FFFFFF;
@@ -316,7 +323,7 @@
   background: #fff2f0;
   color: #D32F2F;
   padding: 10px 14px;
-  border-radius: 2px;
+  border-radius: 10px;
   font-size: 13px;
   margin-bottom: 12px;
   border: 1px solid rgba(211, 47, 47, 0.2);
@@ -326,7 +333,7 @@
   background: #f0faf0;
   color: #26AA99;
   padding: 10px 14px;
-  border-radius: 2px;
+  border-radius: 10px;
   font-size: 13px;
   margin-bottom: 12px;
   border: 1px solid rgba(38, 170, 153, 0.2);

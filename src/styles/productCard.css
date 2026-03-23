@@ -2,10 +2,10 @@
 
 .product-card {
   background: #FFFFFF;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -13,9 +13,9 @@
 }
 
 .product-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-  border-color: #2E7D32;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: #c8e6c9;
 }
 
 .product-image-container {
@@ -122,7 +122,7 @@
   flex: 1;
   font-size: 12px;
   padding: 8px 10px;
-  border-radius: 2px;
+  border-radius: 8px;
 }
 
 .quantity-input {

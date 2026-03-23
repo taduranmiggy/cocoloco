@@ -6,7 +6,7 @@
   align-items: center;
   min-height: 80vh;
   padding: 32px 16px;
-  background: #2E7D32;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
 }
 
 .auth-container {
@@ -16,9 +16,9 @@
 
 .auth-box {
   background-color: white;
-  padding: 30px;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   border: none;
 }
 
@@ -29,10 +29,10 @@
 .auth-box h1 {
   text-align: center;
   margin-bottom: 4px;
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 22px;
   letter-spacing: 0;
-  color: #222;
+  color: #1B5E20;
 }
 
 .auth-subtitle {
@@ -62,18 +62,18 @@
 
 .form-group input,
 .form-group textarea {
-  padding: 10px 12px !important;
-  border: 1px solid #e0e0e0;
+  padding: 12px 14px !important;
+  border: 1.5px solid #e0e0e0;
   font-size: 14px;
-  border-radius: 2px;
-  transition: border-color 0.15s;
-  background-color: #FFFFFF;
+  border-radius: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #FAFAFA;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: #2E7D32;
-  box-shadow: none;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
   background-color: white;
 }
 
@@ -83,21 +83,21 @@
 }
 
 .auth-form .btn-primary {
-  background: #2E7D32;
+  background: linear-gradient(135deg, #2E7D32, #43A047);
   border: none;
-  padding: 10px;
-  font-size: 14px;
+  padding: 12px;
+  font-size: 15px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.5px;
-  border-radius: 2px;
+  border-radius: 10px;
   margin-top: 8px;
 }
 
 .auth-form .btn-primary:hover {
-  background: #1B5E20;
-  transform: none;
-  box-shadow: none;
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.3);
 }
 
 .auth-footer {
@@ -120,9 +120,9 @@
 
 .demo-info {
   margin-top: 16px;
-  padding: 10px 12px;
+  padding: 12px 14px;
   background-color: #f0f7f0;
-  border-radius: 2px;
+  border-radius: 10px;
   border-left: 3px solid #2E7D32;
 }
 
