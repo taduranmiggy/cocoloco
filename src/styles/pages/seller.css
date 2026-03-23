@@ -49,11 +49,11 @@
   transition: color 0.2s, border-color 0.2s;
 }
 
-.seller-tab:hover { color: #EE4D2D; }
+.seller-tab:hover { color: #2E7D32; }
 
 .seller-tab.active {
-  color: #EE4D2D;
-  border-bottom-color: #EE4D2D;
+  color: #2E7D32;
+  border-bottom-color: #2E7D32;
   font-weight: 500;
 }
 
@@ -73,7 +73,7 @@
   transition: border-color 0.2s;
 }
 
-.stat-card:hover { border-color: #EE4D2D; }
+.stat-card:hover { border-color: #2E7D32; }
 
 .stat-card h3, .stat-label {
   font-size: 12px;
@@ -87,7 +87,7 @@
 .stat-card .stat-value, .stat-value {
   font-size: 24px;
   font-weight: 600;
-  color: #EE4D2D;
+  color: #2E7D32;
 }
 
 .stat-card .stat-change {
@@ -96,7 +96,7 @@
 }
 
 .stat-change.positive { color: #27ae60; }
-.stat-change.negative { color: #EE4D2D; }
+.stat-change.negative { color: #D32F2F; }
 
 /* Product Table */
 .seller-section, .seller-card {
@@ -142,7 +142,7 @@
 .seller-table tr:hover td,
 .product-table tr:hover td,
 .inventory-table tr:hover td {
-  background: #fef6f5;
+  background: #f0f7f0;
 }
 
 .product-image-cell img, .seller-table img {
@@ -212,7 +212,7 @@
 .add-product-form .form-group input:focus,
 .add-product-form .form-group select:focus,
 .add-product-form .form-group textarea:focus {
-  border-color: #EE4D2D;
+  border-color: #2E7D32;
   outline: none;
 }
 
@@ -253,7 +253,7 @@
   transition: transform 0.2s;
 }
 
-.toggle-switch input:checked + .toggle-slider { background: #EE4D2D; }
+.toggle-switch input:checked + .toggle-slider { background: #2E7D32; }
 .toggle-switch input:checked + .toggle-slider::before { transform: translateX(20px); }
 
 /* Buttons */
@@ -265,7 +265,7 @@
 }
 
 .btn-add, .btn-new-product {
-  background: #EE4D2D;
+  background: #2E7D32;
   color: #FFFFFF;
   border: none;
   border-radius: 2px;
@@ -276,12 +276,12 @@
   transition: background 0.2s;
 }
 
-.btn-add:hover, .btn-new-product:hover { background: #D73211; }
+.btn-add:hover, .btn-new-product:hover { background: #1B5E20; }
 
 .btn-edit {
   background: none;
-  border: 1px solid #EE4D2D;
-  color: #EE4D2D;
+  border: 1px solid #2E7D32;
+  color: #2E7D32;
   padding: 6px 14px;
   border-radius: 2px;
   font-size: 12px;
@@ -289,7 +289,7 @@
   transition: background 0.2s, color 0.2s;
 }
 
-.btn-edit:hover { background: #EE4D2D; color: #FFFFFF; }
+.btn-edit:hover { background: #2E7D32; color: #FFFFFF; }
 
 .btn-delete, .btn-remove {
   background: none;
@@ -326,7 +326,7 @@
   transition: border-color 0.2s;
 }
 
-.seller-search input:focus { border-color: #EE4D2D; outline: none; }
+.seller-search input:focus { border-color: #2E7D32; outline: none; }
 
 /* Reports page charts placeholder */
 .chart-container, .report-chart {
@@ -374,7 +374,7 @@
   transition: border-color 0.2s;
 }
 
-.storefront-product-card:hover { border-color: #EE4D2D; }
+.storefront-product-card:hover { border-color: #2E7D32; }
 
 .storefront-product-card img {
   width: 100%;
@@ -395,7 +395,7 @@
 
 .storefront-product-card .price {
   font-size: 13px;
-  color: #EE4D2D;
+  color: #2E7D32;
   font-weight: 500;
 }
 

@@ -1,18 +1,18 @@
-/* styles/index.css - Global styles and CSS variables */
+﻿/* styles/index.css - Global styles and CSS variables */
 
 :root {
   /* Brand Colors */
-  --primary-color: #EE4D2D;
-  --primary-light: #FF6533;      /* Lighter orange */
-  --primary-dark: #D73211;       /* Darker orange */
-  --accent-color: #EE4D2D;
-  --accent-light: #FF6533;
-  --accent-dark: #D73211;
+  --primary-color: #2E7D32;
+  --primary-light: #43A047;
+  --primary-dark: #1B5E20;
+  --accent-color: #2E7D32;
+  --accent-light: #43A047;
+  --accent-dark: #1B5E20;
   --secondary-color: #222222;    /* Dark text/headers */
   --secondary-light: #555555;
 
   /* Semantic Colors */
-  --danger-color: #EE4D2D;
+  --danger-color: #D32F2F;
   --warning-color: #FFBF00;
   --success-color: #26AA99;
   --info-color: #2196F3;
@@ -43,10 +43,10 @@
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.12);
-  --shadow-accent: 0 2px 8px rgba(238, 77, 45, 0.3);
-  --shadow-primary: 0 2px 8px rgba(238, 77, 45, 0.3);
+  --shadow-accent: 0 2px 8px rgba(46, 125, 50, 0.3);
+  --shadow-primary: 0 2px 8px rgba(46, 125, 50, 0.3);
 
-  /* Spacing — 4px base scale */
+  /* Spacing â€” 4px base scale */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -149,7 +149,7 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(238, 77, 45, 0.1);
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.1);
   background-color: #fff;
 }
 

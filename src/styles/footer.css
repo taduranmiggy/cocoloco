@@ -2,7 +2,7 @@
 
 .footer {
   background: #FFFFFF;
-  border-top: 4px solid #EE4D2D;
+  border-top: 4px solid #2E7D32;
   padding: 0;
   margin-top: 40px;
 }
@@ -47,7 +47,7 @@
 }
 
 .footer-section ul li a:hover {
-  color: #EE4D2D;
+  color: #2E7D32;
 }
 
 .footer-section p {
@@ -78,9 +78,9 @@
 }
 
 .social-links a:hover {
-  border-color: #EE4D2D;
-  color: #EE4D2D;
-  background: #fef6f5;
+  border-color: #2E7D32;
+  color: #2E7D32;
+  background: #f0f7f0;
 }
 
 /* Footer bottom bar */

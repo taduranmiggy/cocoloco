@@ -37,11 +37,11 @@
   transition: color 0.2s, border-color 0.2s;
 }
 
-.transaction-tab:hover { color: #EE4D2D; }
+.transaction-tab:hover { color: #2E7D32; }
 
 .transaction-tab.active {
-  color: #EE4D2D;
-  border-bottom-color: #EE4D2D;
+  color: #2E7D32;
+  border-bottom-color: #2E7D32;
   font-weight: 500;
 }
 
@@ -65,7 +65,7 @@
 
 .transaction-card:last-child { border-radius: 0 0 2px 2px; }
 
-.transaction-card:hover { background: #fef6f5; }
+.transaction-card:hover { background: #f0f7f0; }
 
 .transaction-header {
   display: flex;
@@ -96,8 +96,8 @@
 
 .transaction-status.pending,
 .transaction-status.processing {
-  color: #EE4D2D;
-  background: #fef6f5;
+  color: #2E7D32;
+  background: #f0f7f0;
 }
 
 .transaction-status.cancelled {
@@ -150,7 +150,7 @@
 .transaction-item-price {
   font-size: 14px;
   font-weight: 500;
-  color: #EE4D2D;
+  color: #2E7D32;
 }
 
 .transaction-footer {
@@ -166,7 +166,7 @@
 .transaction-total {
   font-size: 16px;
   font-weight: 600;
-  color: #EE4D2D;
+  color: #2E7D32;
 }
 
 .transaction-total span { font-size: 12px; font-weight: 400; color: var(--text-secondary); }

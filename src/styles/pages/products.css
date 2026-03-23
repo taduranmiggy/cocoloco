@@ -76,14 +76,14 @@
 }
 
 .category-btn:hover {
-  color: #EE4D2D;
-  background: #fef6f5;
+  color: #2E7D32;
+  background: #f0f7f0;
 }
 
 .category-btn.active {
-  color: #EE4D2D;
+  color: #2E7D32;
   font-weight: 500;
-  background: #fef6f5;
+  background: #f0f7f0;
 }
 
 .products-main { flex: 1; min-width: 0; }

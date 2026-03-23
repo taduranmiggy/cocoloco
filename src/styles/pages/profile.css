@@ -33,7 +33,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #EE4D2D;
+  background: #2E7D32;
   color: #fff;
   font-size: 20px;
   font-weight: 600;
@@ -91,15 +91,15 @@
 
 .profile-sidebar-menu li a:hover,
 .profile-sidebar-menu li button:hover {
-  background: #fef6f5;
-  color: #EE4D2D;
+  background: #f0f7f0;
+  color: #2E7D32;
 }
 
 .profile-sidebar-menu li.active a,
 .profile-sidebar-menu li.active button {
-  color: #EE4D2D;
+  color: #2E7D32;
   font-weight: 500;
-  background: #fef6f5;
+  background: #f0f7f0;
 }
 
 /* ===== Main Content Area ===== */
@@ -152,7 +152,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #EE4D2D, #FF6533);
+  background: linear-gradient(135deg, #2E7D32, #43A047);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,7 +216,7 @@
 }
 
 .profile-info > .btn-primary {
-  background: #EE4D2D;
+  background: #2E7D32;
   color: #fff;
   border: none;
   padding: 10px 32px;
@@ -229,7 +229,7 @@
 }
 
 .profile-info > .btn-primary:hover {
-  background: #D73211;
+  background: #1B5E20;
 }
 
 /* ===== Profile Form (edit mode) ===== */
@@ -272,9 +272,9 @@
 .profile-form .form-group input:focus,
 .profile-form .form-group textarea:focus,
 .profile-form .form-group select:focus {
-  border-color: #EE4D2D;
+  border-color: #2E7D32;
   outline: none;
-  box-shadow: 0 0 0 2px rgba(238, 77, 45, 0.06);
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.06);
 }
 
 .form-actions {
@@ -292,14 +292,14 @@
 }
 
 .form-actions .btn-primary {
-  background: #EE4D2D;
+  background: #2E7D32;
   color: #FFFFFF;
   border: none;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.form-actions .btn-primary:hover { background: #D73211; }
+.form-actions .btn-primary:hover { background: #1B5E20; }
 
 .form-actions .btn-secondary {
   background: #FFFFFF;
@@ -314,12 +314,12 @@
 /* ===== Messages ===== */
 .error-message {
   background: #fff2f0;
-  color: #EE4D2D;
+  color: #D32F2F;
   padding: 10px 14px;
   border-radius: 2px;
   font-size: 13px;
   margin-bottom: 12px;
-  border: 1px solid rgba(238, 77, 45, 0.2);
+  border: 1px solid rgba(211, 47, 47, 0.2);
 }
 
 .success-message {

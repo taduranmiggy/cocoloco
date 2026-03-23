@@ -6,7 +6,7 @@
   align-items: center;
   min-height: 80vh;
   padding: 32px 16px;
-  background: #EE4D2D;
+  background: #2E7D32;
 }
 
 .auth-container {
@@ -72,7 +72,7 @@
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #EE4D2D;
+  border-color: #2E7D32;
   box-shadow: none;
   background-color: white;
 }
@@ -83,7 +83,7 @@
 }
 
 .auth-form .btn-primary {
-  background: #EE4D2D;
+  background: #2E7D32;
   border: none;
   padding: 10px;
   font-size: 14px;
@@ -95,7 +95,7 @@
 }
 
 .auth-form .btn-primary:hover {
-  background: #D73211;
+  background: #1B5E20;
   transform: none;
   box-shadow: none;
 }
@@ -111,7 +111,7 @@
 .auth-footer p { margin-bottom: 4px; }
 
 .auth-footer a {
-  color: #EE4D2D;
+  color: #2E7D32;
   font-weight: 500;
   text-decoration: none;
 }
@@ -121,9 +121,9 @@
 .demo-info {
   margin-top: 16px;
   padding: 10px 12px;
-  background-color: #fef6f5;
+  background-color: #f0f7f0;
   border-radius: 2px;
-  border-left: 3px solid #EE4D2D;
+  border-left: 3px solid #2E7D32;
 }
 
 .demo-info p {
