@@ -1,0 +1,141 @@
+﻿/* styles/pages/auth.css - Login/Register */
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 32px 16px;
+  background: #EE4D2D;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+.auth-box-large {
+  max-width: 500px;
+}
+
+.auth-box h1 {
+  text-align: center;
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0;
+  color: #222;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px !important;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  border-radius: 2px;
+  transition: border-color 0.15s;
+  background-color: #FFFFFF;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #EE4D2D;
+  box-shadow: none;
+  background-color: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+  font-family: var(--font-family);
+}
+
+.auth-form .btn-primary {
+  background: #EE4D2D;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+.auth-form .btn-primary:hover {
+  background: #D73211;
+  transform: none;
+  box-shadow: none;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 13px;
+}
+
+.auth-footer p { margin-bottom: 4px; }
+
+.auth-footer a {
+  color: #EE4D2D;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.auth-footer a:hover { text-decoration: underline; }
+
+.demo-info {
+  margin-top: 16px;
+  padding: 10px 12px;
+  background-color: #fef6f5;
+  border-radius: 2px;
+  border-left: 3px solid #EE4D2D;
+}
+
+.demo-info p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .auth-page { min-height: 100vh; padding: 24px 16px; }
+  .auth-box { padding: 24px 20px; }
+  .form-group input,
+  .form-group textarea { font-size: 16px; }
+}

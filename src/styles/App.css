@@ -1,0 +1,21 @@
+/* styles/App.css - Main application styles */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+}
+
+.main-content {
+  flex: 1;
+  padding: 0;
+}
+
+/* ===== RESPONSIVE LAYOUT ===== */
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0;
+  }
+}
