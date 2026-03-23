@@ -1,7 +1,8 @@
 // pages/buyer/LoginPage.js - Unified login page
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useCart } from '../../context/CartContext';
 import '../../styles/pages/auth.css';
 
 const LoginPage = () => {
@@ -10,7 +11,10 @@ const LoginPage = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
+  const { fetchCart } = useCart();
   const navigate = useNavigate();
+  const location = useLocation();
+  const registered = location.state?.registered;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +23,7 @@ const LoginPage = () => {
 
     try {
       await login(email, password);
+      await fetchCart();
       navigate('/products');
     } catch (err) {
       setError(err.message || 'Login failed. Please try again.');
@@ -34,6 +39,9 @@ const LoginPage = () => {
           <h1>Login</h1>
           <p className="auth-subtitle">Sign in to your CocoirStore account</p>
 
+          {registered && (
+            <div className="success-message">Account created successfully! Please login.</div>
+          )}
           {error && <div className="error-message">{error}</div>}
 
           <form onSubmit={handleSubmit} className="auth-form">

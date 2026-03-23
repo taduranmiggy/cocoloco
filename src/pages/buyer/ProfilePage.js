@@ -59,7 +59,7 @@ const ProfilePage = () => {
           </div>
           <ul className="profile-sidebar-menu">
             <li className="active"><button type="button">My Account</button></li>
-            <li><a href="/orders">My Purchase</a></li>
+            <li><a href="/transactions">My Purchase</a></li>
             <li><a href="/notifications">Notifications</a></li>
           </ul>
         </div>

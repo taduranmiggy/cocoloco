@@ -77,6 +77,9 @@ const Navbar = () => {
           </button>
 
           <div className={`navbar-menu ${menuOpen ? 'menu-open' : ''}`}>
+            <Link to="/" className="nav-link" onClick={closeMenu}>
+              Home
+            </Link>
             {!authState.isAuthenticated ? (
               <>
                 <Link to="/login" className="nav-link" onClick={closeMenu}>

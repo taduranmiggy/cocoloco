@@ -1,7 +1,7 @@
 // pages/buyer/RegisterPage.js - Buyer registration page
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { authAPI } from '../../services/api';
 import '../../styles/pages/auth.css';
 
 const RegisterPage = () => {
@@ -15,7 +15,6 @@ const RegisterPage = () => {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { register } = useAuth();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -31,9 +30,34 @@ const RegisterPage = () => {
     setError('');
     setLoading(true);
 
+    const { email, password, confirmPassword, fullName, address, mobile } = formData;
+
+    if (!email || !password || !confirmPassword || !fullName || !address || !mobile) {
+      setError('All fields are required');
+      setLoading(false);
+      return;
+    }
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      setLoading(false);
+      return;
+    }
+    if (!/^\d{11}$/.test(mobile)) {
+      setError('Mobile number must be 11 digits (e.g., 09XXXXXXXXX)');
+      setLoading(false);
+      return;
+    }
+
     try {
-      await register(formData);
-      navigate('/products');
+      await authAPI.register({
+        name: fullName,
+        email,
+        password,
+        address,
+        mobile,
+      });
+      // Don't auto-login — redirect to login page
+      navigate('/login', { state: { registered: true } });
     } catch (err) {
       setError(err.message || 'Registration failed. Please try again.');
     } finally {

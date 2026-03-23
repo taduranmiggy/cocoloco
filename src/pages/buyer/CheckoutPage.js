@@ -14,6 +14,7 @@ const CheckoutPage = () => {
   const navigate = useNavigate();
 
   const [paymentMethod, setPaymentMethod] = useState('cash');
+  const [onlinePaymentType, setOnlinePaymentType] = useState('');
   const [deliveryType, setDeliveryType] = useState('delivery');
   const [loading, setLoading] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
@@ -26,9 +27,15 @@ const CheckoutPage = () => {
     setLoading(true);
     setError('');
 
+    if (paymentMethod === 'online' && !onlinePaymentType) {
+      setError('Please select a payment channel (GCash, Maya, etc.)');
+      setLoading(false);
+      return;
+    }
+
     try {
       await orderAPI.create({
-        paymentMethod,
+        paymentMethod: paymentMethod === 'online' ? onlinePaymentType || 'online' : paymentMethod,
         deliveryType,
         shippingAddress: authState.user.address,
       });
@@ -134,7 +141,7 @@ const CheckoutPage = () => {
                     name="payment"
                     value="cash"
                     checked={paymentMethod === 'cash'}
-                    onChange={(e) => setPaymentMethod(e.target.value)}
+                    onChange={(e) => { setPaymentMethod(e.target.value); setOnlinePaymentType(''); }}
                   />
                   <span>Cash on Delivery</span>
                 </label>
@@ -151,11 +158,40 @@ const CheckoutPage = () => {
               </div>
 
               {paymentMethod === 'online' && (
-                <div className="payment-info">
-                  <p>Card Details (Simulated)</p>
-                  <input type="text" placeholder="Card Number" disabled defaultValue="4111111111111111" />
-                  <input type="text" placeholder="Expiry" disabled defaultValue="12/25" />
-                  <input type="text" placeholder="CVV" disabled defaultValue="123" />
+                <div className="online-payment-methods">
+                  <p className="online-payment-label">Select Payment Channel:</p>
+                  <div className="payment-channels">
+                    {[
+                      { id: 'gcash', name: 'GCash', color: '#007BFF' },
+                      { id: 'maya', name: 'Maya', color: '#00B140' },
+                      { id: 'grabpay', name: 'GrabPay', color: '#00B14F' },
+                      { id: 'bpi', name: 'BPI Online', color: '#A6192E' },
+                      { id: 'bdo', name: 'BDO Online', color: '#003399' },
+                      { id: 'unionbank', name: 'UnionBank', color: '#F47920' },
+                    ].map((channel) => (
+                      <label
+                        key={channel.id}
+                        className={`payment-channel-card ${onlinePaymentType === channel.id ? 'selected' : ''}`}
+                      >
+                        <input
+                          type="radio"
+                          name="onlinePaymentType"
+                          value={channel.id}
+                          checked={onlinePaymentType === channel.id}
+                          onChange={(e) => setOnlinePaymentType(e.target.value)}
+                        />
+                        <span className="channel-icon" style={{ background: channel.color }}>
+                          {channel.name.charAt(0)}
+                        </span>
+                        <span className="channel-name">{channel.name}</span>
+                      </label>
+                    ))}
+                  </div>
+                  {onlinePaymentType && (
+                    <div className="payment-info-note">
+                      <p>You will be redirected to <strong>{onlinePaymentType === 'gcash' ? 'GCash' : onlinePaymentType === 'maya' ? 'Maya' : onlinePaymentType === 'grabpay' ? 'GrabPay' : onlinePaymentType === 'bpi' ? 'BPI Online' : onlinePaymentType === 'bdo' ? 'BDO Online' : 'UnionBank'}</strong> to complete your payment after placing the order.</p>
+                    </div>
+                  )}
                 </div>
               )}
             </section>

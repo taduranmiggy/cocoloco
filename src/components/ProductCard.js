@@ -1,13 +1,22 @@
 // ProductCard.js - Reusable product display component
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import '../styles/productCard.css';
 
 const ProductCard = ({ product, onEdit, onDelete, isSellerView = false }) => {
+  const { authState } = useAuth();
   const { addToCart } = useCart();
+  const navigate = useNavigate();
   const [quantity, setQuantity] = React.useState(1);
 
   const handleAddToCart = () => {
+    if (!authState.isAuthenticated) {
+      const goLogin = window.confirm('You need to sign in to add items to your cart. Go to login page?');
+      if (goLogin) navigate('/login');
+      return;
+    }
     addToCart(product, quantity);
     setQuantity(1);
     alert('Product added to cart!');
