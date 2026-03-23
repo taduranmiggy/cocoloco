@@ -1,5 +1,6 @@
 // pages/buyer/ProfilePage.js - User profile page with backend API
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { authAPI } from '../../services/api';
 import '../../styles/pages/profile.css';
@@ -58,9 +59,9 @@ const ProfilePage = () => {
             </div>
           </div>
           <ul className="profile-sidebar-menu">
-            <li className="active"><button type="button">My Account</button></li>
-            <li><a href="/transactions">My Purchase</a></li>
-            <li><a href="/notifications">Notifications</a></li>
+            <li className="active"><Link to="/profile">My Account</Link></li>
+            <li><Link to="/transactions">My Purchase</Link></li>
+            <li><Link to="/profile">Notifications</Link></li>
           </ul>
         </div>
 

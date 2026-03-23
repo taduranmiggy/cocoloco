@@ -35,7 +35,8 @@ const CheckoutPage = () => {
 
     try {
       await orderAPI.create({
-        paymentMethod: paymentMethod === 'online' ? onlinePaymentType || 'online' : paymentMethod,
+        paymentMethod,
+        onlinePaymentChannel: paymentMethod === 'online' ? onlinePaymentType : undefined,
         deliveryType,
         shippingAddress: authState.user.address,
       });
